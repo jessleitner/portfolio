@@ -287,7 +287,7 @@
   .clip-card a:hover{text-decoration:underline;}
 
   /* ===== Video carousel (Feed) ===== */
-  .video-carousel{background:var(--white); border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:10px 10px 0 var(--tint);}
+  .video-carousel{background:var(--white); border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:10px 10px 0 var(--tint); max-width:240px; margin:0 auto;}
   .video-carousel-track{position:relative; aspect-ratio:9/16; background:#000;}
   .video-carousel-track video{width:100%; height:100%; object-fit:contain; display:none; background:#000;}
   .video-carousel-track video.active{display:block;}
@@ -434,8 +434,7 @@
       <a class="toc-nav-item" href="#feature-05" data-section="Social Media Strategy — Pluralsight"><span class="toc-nav-num">05</span>The Feed</a>
       <a class="toc-nav-item" href="#feature-06" data-section="Independent Content Creation"><span class="toc-nav-num">06</span>Bookstagram</a>
       <a class="toc-nav-item" href="#feature-07" data-section="Event Planning &amp; Brand Activations"><span class="toc-nav-num">07</span>IRL</a>
-      <a class="toc-nav-item" href="#testimonials" data-section="Testimonials"><span class="toc-nav-num">08</span>What People Say</a>
-      <a class="toc-nav-item" href="#archive" data-section="Career Timeline" style="border-right:none;"><span class="toc-nav-num">09</span>The Archive</a>
+      <a class="toc-nav-item" href="#testimonials" data-section="Testimonials" style="border-right:none;"><span class="toc-nav-num">08</span>What People Say</a>
     </nav>
   </div>
 </section>
@@ -630,14 +629,6 @@
         </div>
       </div>
       <div class="clip-card">
-        <img src="images/luck-of-the-irish.png" alt="Pluralsight LinkedIn post: A little luck of the Irish from the Dublin office">
-        <div class="clip-body">
-          <div class="clip-top"><div class="clip-badge">in</div><strong>Luck of the Irish</strong></div>
-          <p>A St. Patrick's Day feature spotlighting the Dublin office's culture and energy.</p>
-          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440759308658655233" target="_blank" rel="noopener">View Post ↗</a>
-        </div>
-      </div>
-      <div class="clip-card">
         <img src="images/dip-off.png" alt="Pluralsight LinkedIn post: the first-ever Dip Off at HQ">
         <div class="clip-body">
           <div class="clip-top"><div class="clip-badge">in</div><strong>The Dip Off</strong></div>
@@ -820,8 +811,8 @@
 <!-- ============ ARCHIVE / TIMELINE ============ -->
 <section class="bg-tint reveal" id="archive">
   <div class="wrap">
-    <span class="eyebrow section-kicker">Career Timeline</span>
-    <h2 class="section-title" style="margin-bottom:20px;">The Archive</h2>
+    <span class="eyebrow section-kicker">My Experience</span>
+    <h2 class="section-title" style="margin-bottom:20px;">My Experience</h2>
     <div class="timeline">
       <div class="tl-row">
         <div class="tl-date">Dec 2024 — Aug 2026</div>
@@ -960,7 +951,7 @@
           entry.target.id === 'about' ? 'About' :
           entry.target.id === 'toc' ? 'Table of Contents' :
           entry.target.id === 'testimonials' ? 'Testimonials' :
-          entry.target.id === 'archive' ? 'Career Timeline' :
+          entry.target.id === 'archive' ? 'My Experience' :
           (document.querySelector('[href="#'+entry.target.id+'"]')?.dataset.section || '');
         if(name){ label.textContent = name; label.classList.add('show'); }
         else { label.classList.remove('show'); }
