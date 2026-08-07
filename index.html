@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jess Leitner — Brand & Marketing Communications Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --moss:#546D4D;
+    --deep:#2B3A28;
+    --white:#FFFFFF;
+    --black:#000000;
+    --tint:#EEF1EA;
+    --accent:#A85A38;
+    --accent-soft:#EFE0D8;
+    --line: rgba(0,0,0,0.12);
+    --line-dark: rgba(255,255,255,0.2);
+    --font-display:'Fraunces', serif;   /* stand-in for Kingred Modern — see note */
+    --font-sub:'Source Sans 3', 'Source Sans Pro', Arial, sans-serif;
+    --font-body: Arial, Helvetica, sans-serif;
+    --font-script:'Caveat', cursive;
+    --maxw: 1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--black);
+    font-family:var(--font-body);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent-soft); color:var(--black);}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px;}
+  .eyebrow{
+    font-family:var(--font-sub);
+    text-transform:uppercase;
+    letter-spacing:0.12em;
+    font-size:12.5px;
+    font-weight:700;
+  }
+  h1,h2{font-family:var(--font-display); margin:0; font-weight:600; letter-spacing:-0.01em;}
+  h3,h4{font-family:var(--font-sub); margin:0; font-weight:700; letter-spacing:-0.005em;}
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  button{font-family:inherit; cursor:pointer;}
+
+  /* thin circle-outline motif */
+  .ring{border-radius:50%; border:1.5px solid currentColor; display:inline-block;}
+  .ring-deco{position:absolute; border-radius:50%; border:1.5px solid var(--accent); opacity:0.35; pointer-events:none;}
+
+  /* ===== Sticky masthead nav ===== */
+  .topbar{
+    position:sticky; top:0; z-index:50;
+    background:var(--deep); color:var(--white);
+    border-bottom:1px solid var(--line-dark);
+  }
+  .topbar-inner{
+    max-width:var(--maxw); margin:0 auto; padding:14px 32px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+  }
+  .topbar-name{font-family:var(--font-display); font-size:17px; font-weight:600; white-space:nowrap;}
+  .topbar-section{
+    font-family:var(--font-sub); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+    color:#D89A80; opacity:0; transition:opacity .3s ease;
+    display:none;
+  }
+  .topbar-section.show{opacity:1;}
+  .topbar-cta{
+    font-family:var(--font-sub); font-size:12px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+    text-decoration:none; border:1px solid var(--line-dark); padding:8px 14px; border-radius:3px;
+    white-space:nowrap; transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .topbar-cta:hover{background:var(--accent); color:var(--white); border-color:var(--accent);}
+  @media(min-width:640px){ .topbar-section{display:block;} }
+
+  /* ===== Hero / Masthead ===== */
+  .hero{
+    background:
+      radial-gradient(circle at 88% -10%, rgba(168,90,56,0.22), transparent 45%),
+      linear-gradient(180deg, var(--deep) 0%, #35452F 100%);
+    color:var(--white);
+    padding:64px 0 76px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .ring-deco{width:220px; height:220px; top:-60px; right:6%;}
+  .nameplate{
+    text-align:center;
+    border-bottom:1px solid var(--line-dark);
+    padding-bottom:22px;
+    margin-bottom:46px;
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+    flex-wrap:wrap;
+  }
+  .nameplate .masthead-title{
+    font-family:var(--font-sub); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#D89A80;
+  }
+  .hero-eyebrow{color:#D89A80; display:block; margin-bottom:20px; text-align:center;}
+  .hero h1{
+    font-size:clamp(38px, 6.4vw, 78px);
+    line-height:1.04;
+    text-align:center;
+    max-width:920px;
+    margin:0 auto;
+    font-weight:600;
+  }
+  .hero h1 em{font-style:italic; color:#D89A80; font-weight:500;}
+  .hero-deck{
+    max-width:600px; margin:26px auto 0; text-align:center;
+    font-size:17px; color:rgba(255,255,255,0.85);
+  }
+  .hero-cta-row{
+    display:flex; gap:14px; justify-content:center; margin-top:38px; flex-wrap:wrap;
+  }
+  .btn{
+    font-family:var(--font-sub); font-size:13px; font-weight:600; letter-spacing:.04em; text-transform:uppercase;
+    padding:14px 24px; border-radius:3px; text-decoration:none; display:inline-block;
+    transition:transform .2s ease, box-shadow .2s ease;
+    border:1px solid transparent;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-solid{background:var(--accent); color:var(--white);}
+  .btn-solid:hover{box-shadow:0 8px 20px rgba(168,90,56,0.4);}
+  .btn-outline{border-color:rgba(255,255,255,0.5); color:var(--white);}
+  .btn-outline:hover{border-color:var(--white);}
+  .btn-moss{background:var(--moss); color:var(--white);}
+  .btn-moss:hover{box-shadow:0 8px 20px rgba(84,109,77,0.4);}
+
+  .hero-meta{
+    margin-top:56px; padding-top:26px; border-top:1px solid var(--line-dark);
+    display:flex; gap:28px; flex-wrap:wrap; justify-content:center;
+    font-family:var(--font-sub); font-size:13px; color:rgba(255,255,255,0.78);
+  }
+  .hero-meta span{white-space:nowrap;}
+
+  /* ===== Section shells ===== */
+  section{padding:88px 0;}
+  .section-title-row{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:44px; flex-wrap:wrap;}
+  .section-kicker{color:var(--moss); margin-bottom:10px; display:block;}
+  .section-title{font-size:clamp(28px,3.6vw,42px);}
+  .bg-white{background:var(--white);}
+  .bg-tint{background:var(--tint);}
+  .bg-deep{background:var(--deep); color:var(--white);}
+  .rule{border:0; border-top:1px solid var(--line); margin:0;}
+
+  /* ===== About ===== */
+  .about-grid{display:grid; grid-template-columns:220px 1fr; gap:48px; align-items:center;}
+  .about-photo{
+    width:220px; height:220px; border-radius:50%; position:relative;
+    background:var(--tint); display:flex; align-items:center; justify-content:center;
+    border:1.5px solid var(--moss);
+  }
+  .about-photo::before{
+    content:''; position:absolute; inset:-14px; border-radius:50%; border:1.5px solid var(--accent); opacity:0.5;
+  }
+  .about-photo span{font-family:var(--font-display); font-size:56px; color:var(--moss); font-style:italic;}
+  .about-copy p{font-size:16.5px; color:rgba(0,0,0,0.78); margin:0 0 14px;}
+  .about-note{font-family:var(--font-sub); font-size:12px; color:var(--moss); margin-top:6px;}
+
+  /* ===== TOC (horizontal nav) ===== */
+  .toc-nav{display:flex; flex-wrap:wrap; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .toc-nav-item{
+    flex:1 1 auto; padding:16px 16px; text-decoration:none; color:var(--black);
+    font-family:var(--font-sub); font-size:13.5px; font-weight:600; text-align:center;
+    border-right:1px solid var(--line); border-bottom:1px solid var(--line);
+    white-space:nowrap; transition:background .2s ease, color .2s ease;
+  }
+  .toc-nav-item:hover{background:var(--moss); color:var(--white);}
+  .toc-nav-num{color:var(--accent); margin-right:6px; font-weight:700;}
+  .toc-nav-item:hover .toc-nav-num{color:#D89A80;}
+  @media(max-width:760px){ .toc-nav-item{flex:1 1 45%;} }
+
+  /* ===== TOC (old vertical list, unused) ===== */
+  .toc-list{list-style:none; margin:0; padding:0; border-top:1px solid var(--line);}
+  .toc-item{
+    border-bottom:1px solid var(--line);
+    display:grid; grid-template-columns:56px 1fr auto; gap:18px; align-items:center;
+    padding:20px 4px; text-decoration:none; color:var(--black);
+    transition:padding-left .25s ease, background .25s ease;
+  }
+  .toc-item:hover{padding-left:14px; background:var(--tint);}
+  .toc-num{font-family:var(--font-sub); font-weight:700; color:var(--accent); font-size:14px;}
+  .toc-text h3{font-family:var(--font-display); font-weight:600; font-size:clamp(19px,2.4vw,25px); margin-bottom:4px;}
+  .toc-text p{margin:0; color:rgba(0,0,0,0.6); font-size:14.5px; font-family:var(--font-body);}
+  .toc-arrow{font-family:var(--font-sub); font-size:20px; color:var(--moss); transition:transform .25s ease;}
+  .toc-item:hover .toc-arrow{transform:translateX(6px);}
+
+  /* ===== By the numbers ===== */
+  .stats-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+    background:var(--line-dark); border:1px solid var(--line-dark);
+  }
+  @media(max-width:760px){ .stats-grid{grid-template-columns:repeat(2, 1fr);} }
+  .stat-card{background:var(--deep); padding:32px 24px;}
+  .stat-num{font-family:var(--font-display); font-size:clamp(30px,3.4vw,44px); color:#D89A80; line-height:1;}
+  .stat-label{font-family:var(--font-sub); font-size:11.5px; text-transform:uppercase; letter-spacing:.05em; color:rgba(255,255,255,0.75); margin-top:10px; display:block;}
+
+  /* ===== Feature spreads ===== */
+  .feature{padding:0; border-bottom:1px solid var(--line);}
+  .feature-inner{
+    max-width:var(--maxw); margin:0 auto; padding:80px 32px;
+    display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
+  }
+  .feature.reverse .feature-inner{direction:rtl;}
+  .feature.reverse .feature-inner > *{direction:ltr;}
+  .feature-copy .eyebrow{color:var(--accent); margin-bottom:14px; display:block;}
+  .feature-translate{
+    font-family:var(--font-body); font-style:italic; color:var(--accent);
+    font-size:15.5px; line-height:1.45; margin:0 0 16px; max-width:520px;
+  }
+  .feature h3{font-size:clamp(24px,3vw,34px); margin-bottom:18px; font-family:var(--font-display); font-weight:600;}
+  .feature p{color:rgba(0,0,0,0.75); font-size:16px; margin:0 0 14px;}
+  .feature-stats{display:flex; gap:24px; margin:26px 0 26px; flex-wrap:wrap;}
+  .feature-stat b{font-family:var(--font-display); font-size:26px; display:block; color:var(--moss);}
+  .feature-stat span{font-family:var(--font-sub); font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:rgba(0,0,0,0.55);}
+  .feature-links{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;}
+  .link-chip{
+    font-family:var(--font-sub); font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.05em;
+    border:1px solid var(--black); padding:10px 16px; border-radius:3px; text-decoration:none; color:var(--black);
+    transition:background .2s ease, color .2s ease;
+  }
+  .link-chip:hover{background:var(--black); color:var(--white);}
+
+  .feature-media{position:relative;}
+  .media-frame{
+    background:var(--moss); border-radius:6px; overflow:hidden; position:relative;
+    box-shadow: 10px 10px 0 var(--accent-soft);
+  }
+  .media-frame img{width:100%; height:100%; object-fit:cover;}
+  .media-tag{
+    position:absolute; top:14px; left:14px; background:var(--deep); color:#D89A80;
+    font-family:var(--font-sub); font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; font-weight:700;
+    padding:6px 10px; border-radius:2px; z-index:2;
+  }
+  .screenshot-card{
+    background:var(--white); border:1px solid var(--line); border-radius:6px; padding:0; overflow:hidden;
+    box-shadow: 10px 10px 0 var(--tint);
+  }
+  .browser-chrome{background:var(--tint); padding:10px 16px; display:flex; align-items:center; gap:8px; border-bottom:1px solid var(--line);}
+  .browser-dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
+  .browser-url{font-family:var(--font-sub); font-size:11px; color:rgba(0,0,0,0.55); margin-left:6px;}
+  .stacked-media{display:flex; flex-direction:column; gap:16px;}
+  .stacked-media img{border-radius:6px; border:1px solid var(--line);}
+
+  .ambassador-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .ambassador-grid a{display:flex; align-items:center; justify-content:center; border-radius:6px; border:1px solid var(--line); background:var(--white); overflow:hidden; height:300px;}
+  .ambassador-grid img{width:100%; height:100%; object-fit:contain; object-position:center;}
+
+  /* ===== Video row ===== */
+  .video-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
+  .video-card{background:var(--white); border:1px solid var(--line-dark); border-radius:6px; overflow:hidden; text-decoration:none; display:block; color:inherit; transition:transform .2s ease;}
+  .video-card:hover{transform:translateY(-3px);}
+  .video-thumb{position:relative; aspect-ratio:16/9; background:var(--moss); overflow:hidden;}
+  .video-thumb img{width:100%; height:100%; object-fit:cover;}
+  .play-badge{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:56px; height:56px; border-radius:50%; background:rgba(0,0,0,0.55); border:1.5px solid rgba(255,255,255,0.8);
+    display:flex; align-items:center; justify-content:center; color:var(--white); font-size:18px;
+  }
+  .video-card-body{padding:20px 20px 24px;}
+  .video-card h4{font-size:18px; margin-bottom:8px; color:var(--black);}
+  .video-card p{margin:0; font-size:14px; color:rgba(0,0,0,0.68); font-family:var(--font-body);}
+  .video-card .watch-link{font-family:var(--font-sub); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--accent); display:block; margin-top:10px;}
+
+  /* ===== Clipping cards (LinkedIn / Instagram) ===== */
+  .clip-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px;}
+  .clip-card{
+    background:var(--white); border:1px solid var(--line); border-radius:6px; overflow:hidden;
+    display:flex; flex-direction:column; min-height:170px;
+  }
+  .clip-card img{width:100%; aspect-ratio:4/3; object-fit:cover; object-position:top;}
+  .clip-body{padding:18px; display:flex; flex-direction:column; gap:10px; flex-grow:1;}
+  .clip-top{display:flex; align-items:center; gap:10px;}
+  .clip-badge{
+    width:28px; height:28px; border-radius:50%; background:transparent; color:var(--moss); border:1.5px solid var(--moss);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-sub); font-size:11px; font-weight:700; flex-shrink:0;
+  }
+  .clip-card p{margin:0; font-size:14px; color:rgba(0,0,0,0.7); flex-grow:1;}
+  .clip-card a{font-family:var(--font-sub); font-size:11.5px; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--accent); text-decoration:none;}
+  .clip-card a:hover{text-decoration:underline;}
+
+  /* ===== Video carousel (Feed) ===== */
+  .video-carousel{background:var(--white); border:1px solid var(--line); border-radius:6px; overflow:hidden; box-shadow:10px 10px 0 var(--tint);}
+  .video-carousel-track{position:relative; aspect-ratio:9/16; background:#000;}
+  .video-carousel-track video{width:100%; height:100%; object-fit:contain; display:none; background:#000;}
+  .video-carousel-track video.active{display:block;}
+  .carousel-nav{display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-top:1px solid var(--line);}
+  .carousel-btn{
+    width:34px; height:34px; border-radius:50%; border:1.5px solid var(--moss); background:var(--white); color:var(--moss);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; font-family:var(--font-sub); font-size:16px; padding:0;
+  }
+  .carousel-btn:hover{background:var(--moss); color:var(--white);}
+  .carousel-dots{display:flex; gap:8px;}
+  .carousel-dot{width:8px; height:8px; border-radius:50%; background:var(--line); cursor:pointer; border:none; padding:0;}
+  .carousel-dot.active{background:var(--accent);}
+
+  /* ===== Recommendations ===== */
+  .rec-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:56px;}
+  .rec-card{background:var(--tint); border:1px solid var(--line); border-radius:8px; padding:34px;}
+  .rec-icon{
+    width:46px; height:46px; border-radius:50%; background:var(--moss); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-display);
+    font-size:24px; font-style:italic; margin-bottom:20px;
+  }
+  .rec-card p{font-size:14.5px; line-height:1.65; color:rgba(0,0,0,0.76); margin:0 0 13px; font-family:var(--font-body);}
+  .rec-attr{margin-top:16px; padding-top:16px; border-top:1px solid var(--line);}
+  .rec-name{font-family:var(--font-sub); font-weight:700; font-size:14.5px; display:block;}
+  .rec-role{font-family:var(--font-sub); font-size:12px; color:var(--moss); text-transform:uppercase; letter-spacing:.04em;}
+  .quote-wall-label{font-family:var(--font-sub); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--moss); margin-bottom:20px; display:block;}
+  @media(max-width:760px){ .rec-grid{grid-template-columns:1fr;} }
+
+  /* ===== Testimonials ===== */
+  .quote-wall{columns:3 260px; column-gap:18px;}
+  .quote-card{
+    break-inside:avoid; margin-bottom:18px; background:var(--white); border:1px solid var(--line);
+    border-radius:6px; padding:24px; position:relative;
+  }
+  .quote-mark{font-family:var(--font-display); font-size:44px; color:var(--accent); line-height:0.5; display:block; margin-bottom:10px;}
+  .quote-card p{margin:0; font-family:var(--font-display); font-style:italic; font-size:19px; line-height:1.4; color:var(--black);}
+
+  /* ===== Archive / timeline ===== */
+  .timeline{border-top:1px solid var(--line);}
+  .tl-row{
+    display:grid; grid-template-columns:180px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--line);
+  }
+  .tl-date{font-family:var(--font-sub); font-size:12.5px; font-weight:600; color:var(--moss); padding-top:3px;}
+  .tl-role h4{font-size:19px; margin-bottom:4px;}
+  .tl-role .tl-org{font-family:var(--font-sub); font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:rgba(0,0,0,0.55); margin-bottom:8px; display:block;}
+  .tl-role p{margin:0; font-size:14.5px; color:rgba(0,0,0,0.7); font-family:var(--font-body);}
+
+  .edu-cert-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:50px;}
+  .edu-cert-grid h4{font-family:var(--font-sub); font-size:12px; text-transform:uppercase; letter-spacing:.09em; color:var(--moss); margin-bottom:16px;}
+  .edu-cert-grid ul{margin:0; padding:0; list-style:none;}
+  .edu-cert-grid li{padding:10px 0; border-bottom:1px solid var(--line); font-size:14.5px;}
+
+  /* ===== Footer / contact ===== */
+  .footer{background:var(--deep); color:var(--white); padding:80px 0 40px;}
+  .footer-head{text-align:center; max-width:640px; margin:0 auto;}
+  .footer h2{font-size:clamp(30px,4.4vw,52px); margin-bottom:18px;}
+  .footer-head p{color:rgba(255,255,255,0.8); font-size:16px; font-family:var(--font-body);}
+  .footer-cta-row{display:flex; justify-content:center; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .footer-contact{
+    margin-top:64px; padding-top:32px; border-top:1px solid var(--line-dark);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px;
+  }
+  .footer-contact-list{display:flex; gap:26px; flex-wrap:wrap; font-family:var(--font-sub); font-size:13px; color:rgba(255,255,255,0.85);}
+  .footer-sig{font-family:var(--font-script); font-size:42px; color:#D89A80;}
+  .footer-fine{margin-top:40px; text-align:center; font-family:var(--font-sub); font-size:11px; color:rgba(255,255,255,0.4); letter-spacing:.04em;}
+
+  @media(max-width:860px){
+    .feature-inner{grid-template-columns:1fr; padding:56px 24px;}
+    .feature.reverse .feature-inner{direction:ltr;}
+    .quote-wall{columns:1 260px;}
+    .tl-row{grid-template-columns:1fr; gap:6px;}
+    .edu-cert-grid{grid-template-columns:1fr; gap:28px;}
+    .about-grid{grid-template-columns:1fr; text-align:center; justify-items:center;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-name">Jess Leitner</div>
+    <div class="topbar-section" id="topbar-section">The Issue</div>
+    <a class="topbar-cta" href="mailto:jessicaleitner2@gmail.com">Get in touch</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="home">
+  <div class="ring-deco"></div>
+  <div class="wrap">
+    <div class="nameplate">
+      <span class="masthead-title">The Leitner Report</span>
+      <span class="masthead-title">Pittsburgh, PA · Est. 2018</span>
+    </div>
+    <span class="eyebrow hero-eyebrow">Brand &amp; Marketing Communications Leader</span>
+    <h1>Every company has a story.<br>I find <em>the one worth telling.</em></h1>
+    <p class="hero-deck">I've spent the last eight-plus years helping brands figure out what they're actually trying to say — then saying it in a way people want to listen to. Scroll on for the receipts.</p>
+    <div class="hero-cta-row">
+      <a href="#toc" class="btn btn-solid">Read the Issue ↓</a>
+      <a href="Jess-Leitner-Resume.pdf" target="_blank" class="btn btn-outline">Download Résumé ↓</a>
+      <a href="mailto:jessicaleitner2@gmail.com" class="btn btn-outline">Say Hello</a>
+    </div>
+    <div class="hero-meta">
+      <span>☎ 412-417-0143</span>
+      <span>✉ jessicaleitner2@gmail.com</span>
+      <span>📍 Pittsburgh, PA</span>
+      <a href="https://www.linkedin.com/in/jessleitner/" target="_blank" rel="noopener" style="text-decoration:none;">in LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABOUT ============ -->
+<section class="bg-white reveal" id="about">
+  <div class="wrap">
+    <span class="eyebrow section-kicker">About</span>
+    <h2 class="section-title" style="margin-bottom:36px;">Hi, I'm Jess.</h2>
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="images/jess-headshot.jpg" alt="Jess Leitner" style="width:100%; height:100%; object-fit:cover; border-radius:50%;">
+      </div>
+      <div class="about-copy">
+        <p>I'm a brand storyteller at heart — whether that means shaping how a company talks about itself to the world, or convincing thousands of strangers on the internet to trust my opinion on a beach read.</p>
+        <p>Most recently, I spent years helping shape how people see and feel about Pluralsight, inside and out. But the throughline works anywhere audiences and reputation matter: find the real story worth telling, then tell it in a way people actually want to hear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TABLE OF CONTENTS ============ -->
+<section class="bg-tint" id="toc" style="padding:56px 0;">
+  <div class="wrap">
+    <div class="section-title-row" style="margin-bottom:24px;">
+      <div>
+        <span class="eyebrow section-kicker">In This Issue</span>
+        <h2 class="section-title">Table of Contents</h2>
+      </div>
+    </div>
+    <nav class="toc-nav">
+      <a class="toc-nav-item" href="#feature-01" data-section="Employee Advocacy Program"><span class="toc-nav-num">01</span>The Ambassador Effect</a>
+      <a class="toc-nav-item" href="#feature-02" data-section="Employer Brand Newsletter"><span class="toc-nav-num">02</span>People of Pluralsight</a>
+      <a class="toc-nav-item" href="#feature-03" data-section="Careers Site &amp; EVP Strategy"><span class="toc-nav-num">03</span>Careers, Reimagined</a>
+      <a class="toc-nav-item" href="#feature-04" data-section="Long-Form Video Production"><span class="toc-nav-num">04</span>On Camera</a>
+      <a class="toc-nav-item" href="#feature-05" data-section="Social Media Strategy — Pluralsight"><span class="toc-nav-num">05</span>The Feed</a>
+      <a class="toc-nav-item" href="#feature-06" data-section="Independent Content Creation"><span class="toc-nav-num">06</span>Bookstagram</a>
+      <a class="toc-nav-item" href="#feature-07" data-section="Event Planning &amp; Brand Activations"><span class="toc-nav-num">07</span>IRL</a>
+      <a class="toc-nav-item" href="#testimonials" data-section="Testimonials"><span class="toc-nav-num">08</span>What People Say</a>
+      <a class="toc-nav-item" href="#archive" data-section="Career Timeline" style="border-right:none;"><span class="toc-nav-num">09</span>The Archive</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ 01: AMBASSADOR PROGRAM ============ -->
+<article class="feature bg-white reveal" id="feature-01">
+  <div class="feature-inner">
+    <div class="feature-copy">
+      <p class="feature-translate">I built an employee advocacy program from scratch — the same playbook as influencer marketing, just powered by the people already inside the company.</p>
+      <h3>The Ambassador Effect</h3>
+      <p>I started with a simple bet: the most convincing voice for any brand isn't a paid ad, it's the people who already believe in it. So I built a program from scratch to find those people, coach them, and give them a reason to speak up — not as recruiters, but as genuine champions for the product, culture, and workplace they were part of.</p>
+      <p>That program grew into a channel that outperformed nearly everything else in the mix — proof that trust is built person by person, long before it ever shows up in a campaign brief.</p>
+      <div class="feature-stats">
+        <div class="feature-stat"><b>~1M</b><span>Organic Impressions</span></div>
+        <div class="feature-stat"><b>18 mo.</b><span>Program Window</span></div>
+        <div class="feature-stat"><b>0→1</b><span>Built From Scratch</span></div>
+      </div>
+      <div class="feature-links">
+        <a class="link-chip" href="https://www.linkedin.com/feed/hashtag/pschampions/" target="_blank" rel="noopener">See #PSChampions on LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="feature-media">
+      <div class="ambassador-grid">
+        <a href="images/ambassador-1.png" target="_blank"><img src="images/ambassador-1.png" alt="Ambassador LinkedIn post by Manolo Martin, Software Engineer at Pluralsight"></a>
+        <a href="images/ambassador-2.png" target="_blank"><img src="images/ambassador-2.png" alt="Ambassador LinkedIn post by Adam Mumma at Pluralsight"></a>
+        <a href="images/ambassador-3.png" target="_blank"><img src="images/ambassador-3.png" alt="Ambassador LinkedIn post by Kim Karnatz at Pluralsight"></a>
+        <a href="images/ambassador-4.png" target="_blank"><img src="images/ambassador-4.png" alt="Ambassador LinkedIn post by Erica Sparks, Pluralsight Brand Ambassador"></a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============ 02: PEOPLE OF PLURALSIGHT ============ -->
+<article class="feature reverse bg-tint reveal" id="feature-02">
+  <div class="feature-inner">
+    <div class="feature-copy">
+      <p class="feature-translate">I created and grew an internal storytelling series — the employee equivalent of a branded newsletter or customer content series.</p>
+      <h3>People of Pluralsight</h3>
+      <p>I set this up from nothing — sourcing stories, interviewing employees, writing every piece, and building an audience that grew to tens of thousands of subscribers. What began as a monthly blog newsletter didn't stay one thing for long: I expanded it into a live monthly webinar and a video spotlight series, each one built to pull people back to the blog and keep the story going.</p>
+      <p>Running it end to end meant building a content engine that earned attention on its own, issue after issue, instead of chasing it one post at a time.</p>
+      <div class="feature-stats">
+        <div class="feature-stat"><b>45K</b><span>Subscribers</span></div>
+        <div class="feature-stat"><b>~14K</b><span>Avg. Views / Article</span></div>
+      </div>
+      <div class="feature-links">
+        <a class="link-chip" href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7198352316347875328" target="_blank" rel="noopener">Follow the Newsletter ↗</a>
+      </div>
+    </div>
+    <div class="feature-media">
+      <div class="stacked-media">
+        <img src="images/people-of-ps-erica.png" alt="People of Pluralsight feature: Erica Shahinian-Miller, Sr. Content Project Manager">
+        <img src="images/people-of-ps-live.png" alt="People of Pluralsight LIVE event: Meet the people who make the difference">
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============ 03: CAREERS PAGE ============ -->
+<article class="feature bg-white reveal" id="feature-03">
+  <div class="feature-inner">
+    <div class="feature-copy">
+      <p class="feature-translate">I led the strategy and redesign of a company's candidate-facing website — the same work as any brand or product site overhaul, focused on clarity and conversion.</p>
+      <h3>Careers, Reimagined</h3>
+      <p>I led the strategy behind rebuilding the careers site from the ground up, partnering closely with marketing and creative to turn a single page into a real destination. The win was never the page count — it was clarity: a more streamlined, informative experience built on real employee stories, video, and a messaging framework people could actually picture themselves inside.</p>
+      <p>That same EVP work became the backbone for messaging well beyond the site itself, lifting brand awareness 45% across key markets and setting the foundation every other piece of content and communication built on.</p>
+      <div class="feature-stats">
+        <div class="feature-stat"><b>+45%</b><span>Brand Awareness, Key Markets</span></div>
+        <div class="feature-stat"><b>1 → 7</b><span>Pages, Streamlined &amp; Informative</span></div>
+      </div>
+      <div class="feature-links">
+        <a class="link-chip" href="https://www.pluralsight.com/careers" target="_blank" rel="noopener">View the Careers Site ↗</a>
+      </div>
+    </div>
+    <div class="feature-media">
+      <div class="screenshot-card">
+        <div class="browser-chrome">
+          <span class="browser-dot" style="background:var(--accent);"></span>
+          <span class="browser-dot" style="background:#D89A80;"></span>
+          <span class="browser-dot" style="background:var(--moss);"></span>
+          <span class="browser-url">pluralsight.com/careers</span>
+        </div>
+        <img src="images/careers-page.png" alt="Pluralsight careers site homepage, 'Shape the future of tech upskilling'">
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============ 04: ON CAMERA ============ -->
+<section class="bg-deep reveal" id="feature-04">
+  <div class="wrap" style="padding:88px 32px;">
+    <p class="feature-translate" style="color:#D89A80; max-width:640px;">I produced long-form brand video — the kind of documentary-style storytelling any consumer brand uses to build trust.</p>
+    <h3 style="font-size:clamp(24px,3vw,34px); margin-bottom:16px; color:var(--white); font-family:var(--font-display); font-weight:600;">On Camera</h3>
+    <p style="max-width:640px; color:rgba(255,255,255,0.8); font-size:16px; margin-bottom:44px; font-family:var(--font-body);">I sat down with the people whose stories actually mattered, asked the questions that got past the talking points, and shaped hours of footage into something worth watching. Candidates have told me, unprompted, that these were the videos that convinced them to apply.</p>
+    <div class="video-grid">
+      <a class="video-card" href="https://www.youtube.com/watch?v=sHDXGwmwc5Y" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/sHDXGwmwc5Y/hqdefault.jpg" alt="Thriving Together at Pluralsight video thumbnail" onerror="this.style.opacity=0">
+          <span class="play-badge">▶</span>
+        </div>
+        <div class="video-card-body">
+          <h4>Thriving Together at Pluralsight</h4>
+          <p>Interviewed team members across the company to understand their real experience — and used it to position Pluralsight authentically to future candidates.</p>
+          <span class="watch-link">Watch on YouTube ↗</span>
+        </div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/watch?v=GBgOBzHQdGY" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/GBgOBzHQdGY/hqdefault.jpg" alt="Making an Impact: Revenue at Pluralsight video thumbnail" onerror="this.style.opacity=0">
+          <span class="play-badge">▶</span>
+        </div>
+        <div class="video-card-body">
+          <h4>Making an Impact: Revenue at Pluralsight</h4>
+          <p>Interviewed sales team members to tell the story of the revenue org during the company's biggest sales hiring push.</p>
+          <span class="watch-link">Watch on YouTube ↗</span>
+        </div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/watch?v=0bBzPPoyu7k" target="_blank" rel="noopener">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/0bBzPPoyu7k/hqdefault.jpg" alt="Meet the Interns video thumbnail" onerror="this.style.opacity=0">
+          <span class="play-badge">▶</span>
+        </div>
+        <div class="video-card-body">
+          <h4>Meet the Interns</h4>
+          <p>Filmed and interviewed the summer intern class to position the program to future cohorts.</p>
+          <span class="watch-link">Watch on YouTube ↗</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05: THE FEED (Pluralsight social) ============ -->
+<article class="feature bg-tint reveal" id="feature-05">
+  <div class="feature-inner">
+    <div class="feature-copy">
+      <p class="feature-translate">I owned the employer brand and culture content inside a broader social strategy — the storytelling layer that shows people what a brand is actually like on the inside.</p>
+      <h3>The Feed</h3>
+      <p>I collaborated closely with Pluralsight's social team on the brand's LinkedIn presence, owning the employer brand and culture content specifically — the posts that gave people outside the company a real look at what it's like to work there. Look for the #WeArePluralsight tag and you'll find most of it.</p>
+      <p>That partnership helped drive a 40% year-over-year increase in reach, holding a 13.5% average engagement rate along the way.</p>
+      <div class="feature-stats">
+        <div class="feature-stat"><b>40%</b><span>YoY Reach Growth</span></div>
+        <div class="feature-stat"><b>13.5%</b><span>Avg. Engagement Rate</span></div>
+      </div>
+      <div class="feature-links">
+        <a class="link-chip" href="https://www.linkedin.com/feed/hashtag/wearepluralsight/" target="_blank" rel="noopener">See #WeArePluralsight on LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="feature-media">
+      <div class="video-carousel" id="feedCarousel">
+        <div class="video-carousel-track">
+          <video class="active" src="videos/feed-reel-1.mp4" controls playsinline preload="metadata"></video>
+          <video src="videos/feed-reel-2.mp4" controls playsinline preload="metadata"></video>
+          <video src="videos/feed-reel-3.mp4" controls playsinline preload="metadata"></video>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-btn" type="button" onclick="feedCarouselMove(-1)" aria-label="Previous video">‹</button>
+          <div class="carousel-dots">
+            <button class="carousel-dot active" type="button" onclick="feedCarouselGo(0)" aria-label="Video 1"></button>
+            <button class="carousel-dot" type="button" onclick="feedCarouselGo(1)" aria-label="Video 2"></button>
+            <button class="carousel-dot" type="button" onclick="feedCarouselGo(2)" aria-label="Video 3"></button>
+          </div>
+          <button class="carousel-btn" type="button" onclick="feedCarouselMove(1)" aria-label="Next video">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0 32px 80px;">
+    <span class="quote-wall-label">A few featured posts</span>
+    <div class="clip-grid">
+      <div class="clip-card">
+        <img src="images/social-post-2.png" alt="Pluralsight LinkedIn post: Q2 Culture Champion award winners">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">in</div><strong>Culture Champions</strong></div>
+          <p>Recognition content celebrating quarterly Culture Champion award winners.</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7486084975260258305" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/social-post-3.png" alt="Pluralsight LinkedIn post: A day in the life of a Pluralsighter, Dublin edition">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">in</div><strong>Day in the Life</strong></div>
+          <p>A day-in-the-life series giving candidates a real look at working life at Pluralsight, Dublin edition.</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7472345759703777280" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/social-post-4.png" alt="Pluralsight LinkedIn post: RKO 2026 company kickoff recap">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">in</div><strong>Company Kickoff</strong></div>
+          <p>Recap content from Pluralsight's 2026 company kickoff (RKO).</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7421613013033717760" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/luck-of-the-irish.png" alt="Pluralsight LinkedIn post: A little luck of the Irish from the Dublin office">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">in</div><strong>Luck of the Irish</strong></div>
+          <p>A St. Patrick's Day feature spotlighting the Dublin office's culture and energy.</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7440759308658655233" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/dip-off.png" alt="Pluralsight LinkedIn post: the first-ever Dip Off at HQ">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">in</div><strong>The Dip Off</strong></div>
+          <p>I planned this one — a small culture-building event at HQ that turned into one of the year's top-performing social posts.</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7465783990923206656" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============ 06: BOOKSTAGRAM (personal brand) ============ -->
+<article class="feature bg-white reveal" id="feature-06">
+  <div class="feature-inner">
+    <div class="feature-copy">
+      <p class="feature-translate">I built an independent media brand from the ground up — audience, content calendar, and all.</p>
+      <h3>Bookstagram</h3>
+      <p>Outside the day job, I built @readreviewsbyjess into an audience of nearly 50,000 from nothing — no team, no budget, just organic strategy: reading platform trends, listening to what the community actually wanted, and showing up consistently. I owned every part of it myself, from concept and copywriting to filming, editing, publishing, and reading the analytics to figure out what to do next.</p>
+      <p>Publishers, bestselling authors, and consumer brands have trusted that audience enough to run launches and sponsored campaigns through it.</p>
+      <div class="feature-stats">
+        <div class="feature-stat"><b>~50K</b><span>Engaged Followers</span></div>
+        <div class="feature-stat"><b>383</b><span>Pieces of Content</span></div>
+        <div class="feature-stat"><b>3.3M+</b><span>Views · 900K+ Likes</span></div>
+      </div>
+      <div class="feature-links">
+        <a class="link-chip" href="https://www.instagram.com/readreviewsbyjess/" target="_blank" rel="noopener">Visit @readreviewsbyjess ↗</a>
+      </div>
+    </div>
+    <div class="feature-media">
+      <div class="screenshot-card">
+        <img src="images/bookstagram-profile.png" alt="@readreviewsbyjess Instagram profile, blogger with nearly 50,000 followers">
+      </div>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0 32px 80px;">
+    <span class="quote-wall-label">A few posts from the feed</span>
+    <div class="clip-grid">
+      <div class="clip-card">
+        <img src="images/bookstagram-1.png" alt="Instagram carousel: Your guide to using your Kindle like a pro">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">IG</div><strong>Reader Guide</strong></div>
+          <p>A "using your Kindle like a pro" guide — evergreen, saveable content built for shares.</p>
+          <a href="https://www.instagram.com/p/CouYj1zL3cd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/bookstagram-2.png" alt="Instagram carousel: Your guide to reading more">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">IG</div><strong>Reader Guide</strong></div>
+          <p>A "guide to reading more" carousel pairing tips with a curated stack of romance picks.</p>
+          <a href="https://www.instagram.com/p/CsrEzNwLPAL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/bookstagram-3.png" alt="Instagram reel featuring the book Verity by Colleen Hoover">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">IG</div><strong>Book Review Reel</strong></div>
+          <p>A hook-driven review reel for Colleen Hoover's "Verity" — built for scroll-stopping shares.</p>
+          <a href="https://www.instagram.com/reel/CgSUkJbANPu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Reel ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/bookstagram-4.png" alt="Instagram reel: midday reading break">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">IG</div><strong>Behind the Scenes</strong></div>
+          <p>A "midday reading break" reel — the personal, day-in-the-life content that builds trust with an audience.</p>
+          <a href="https://www.instagram.com/reel/C0CHYaQLsso/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Reel ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ============ 07: IRL EVENTS ============ -->
+<section class="bg-tint reveal" id="feature-07">
+  <div class="wrap" style="padding:88px 32px;">
+    <p class="feature-translate" style="max-width:640px;">I planned and ran brand experiences in the real world — the events and field marketing that make any brand tangible.</p>
+    <h2 class="section-title" style="margin-bottom:16px;">IRL</h2>
+    <p style="max-width:640px; color:rgba(0,0,0,0.72); font-size:16px; margin-bottom:36px;">I planned and ran everything from small remote culture moments to a full external recruiting event, handling messaging, signage, catering, and run of show myself, start to finish — because the strategy matters, but so does whether the coffee showed up on time.</p>
+    <div class="clip-grid">
+      <div class="clip-card">
+        <img src="images/talent-connect-invite.jpeg" alt="Pluralsight Talent Connect invitation graphic">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">01</div><strong>Talent Connect</strong></div>
+          <p>Led an external HQ event to drive brand awareness — messaging templates, signage, catering, and run of show.</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445484984464867328" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/volunteer-month.png" alt="Pluralsight LinkedIn post: Volunteer Month wrap-up">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">02</div><strong>Volunteer Month</strong></div>
+          <p>Organized a volunteer month event at HQ so team members could give back together.</p>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7453447461479809024" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/womens-ps-event.jpeg" alt="Women@PS terrarium workshop, remote team gathering">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">03</div><strong>Women's History Month</strong></div>
+          <p>As Women@PS Community Co-Chair, planned a full month of Women's History Month programming — including a remote terrarium workshop — to inform, engage, and connect women and allies across the company.</p>
+          <a href="https://www.linkedin.com/posts/celebrating-womens-history-month-ugcPost-7444836738025304064--kiS/?utm_source=share&utm_medium=member_desktop&rcm=ACoAABtOlB8BrRu21hmrORYIduhp_8E35wTEbSc" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+      <div class="clip-card">
+        <img src="images/strategy-day.png" alt="Pluralsight team building STEM kits for the Girl Scouts of Northeast Texas">
+        <div class="clip-body">
+          <div class="clip-top"><div class="clip-badge">04</div><strong>Strategy Day Give-Back</strong></div>
+          <p>Ran a volunteer event for the annual strategy day — presentation, kit sourcing, and delivery, start to finish.</p>
+          <a href="https://x.com/pluralsight/status/1970283308622749729" target="_blank" rel="noopener">View Post ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="bg-white reveal" id="testimonials">
+  <div class="wrap">
+    <span class="eyebrow section-kicker">Testimonials</span>
+    <h2 class="section-title" style="margin-bottom:40px;">What People Say</h2>
+
+    <div class="rec-grid">
+      <div class="rec-card">
+        <div class="rec-icon">&ldquo;</div>
+        <p>I've had the privilege of working with Jess, and I can't recommend her highly enough.</p>
+        <p>Jess is an absolute rockstar when it comes to employer branding. During a time when Pluralsight was constantly evolving and our employee value proposition was shifting, she was instrumental in helping us navigate those changes. She built compelling content, refined our employer brand, and gave our Talent Acquisition team the tools and messaging they needed to adapt with confidence.</p>
+        <p>Beyond that, Jess played a key role in expanding our employer brand into new markets as we opened offices, helping build awareness and establish a strong presence in each location. She has a unique ability to combine strategic thinking with exceptional execution, and the impact of her work was felt across the organization.</p>
+        <p>What stands out most, though, is who Jess is as a teammate. She's thoughtful, collaborative, and incredibly reliable. She always came to the table prepared, brought a positive attitude, and never hesitated to roll up her sleeves to help wherever she was needed. She made everyone around her better, and she was a genuine pleasure to work with.</p>
+        <p>Any organization would be fortunate to have Jess on their team. I have no doubt she'll continue to make a meaningful impact wherever she goes.</p>
+        <div class="rec-attr">
+          <span class="rec-name">Jason Montierth</span>
+          <span class="rec-role">Pluralsight · Key Stakeholder</span>
+        </div>
+      </div>
+      <div class="rec-card">
+        <div class="rec-icon">&ldquo;</div>
+        <p>I had the privilege of working with Jess as she built our very first employer brand from the ground up, and I can honestly say she exceeded every expectation. She didn't just develop the strategy, she brought every piece of it to life with incredible care, creativity, and execution. Whatever challenge came her way, Jess consistently raised the bar and delivered work at the highest level.</p>
+        <p>Beyond her talent, Jess was an incredible partner to our team, and every stakeholder she worked with. She built strong relationships, earned trust quickly, and always approached her work with positivity and a true sense of ownership.</p>
+        <p>I would recommend Jess to any employer brand team in a heartbeat. Any organization would be lucky to have her talent, passion, and partnership.</p>
+        <div class="rec-attr">
+          <span class="rec-name">Heidi Muñoz</span>
+          <span class="rec-role">Pluralsight · Direct Manager</span>
+        </div>
+      </div>
+    </div>
+
+    <span class="quote-wall-label">And a few more, in their own words</span>
+    <div class="quote-wall">
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>Consistently raised the bar.</p></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>A real gift for turning abstract ideas into stories people actually connect with.</p></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>Thoughtful, collaborative, and one of the most creative people I've worked with.</p></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>An exceptional collaborator who earns trust quickly.</p></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>A powerhouse.</p></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>Gets things done.</p></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>Makes people feel supported.</p></div>
+      <div class="quote-card"><span class="quote-mark">&ldquo;</span><p>Puts her heart into everything she does.</p></div>
+    </div>
+    <p style="margin-top:28px; font-family:var(--font-sub); font-size:12px; color:rgba(0,0,0,0.5); text-transform:uppercase; letter-spacing:.04em;">— from teammates, leaders, and partners</p>
+  </div>
+</section>
+
+<!-- ============ BY THE NUMBERS ============ -->
+<section class="bg-deep" style="padding:64px 0;">
+  <div class="wrap">
+    <span class="eyebrow" style="color:#D89A80; display:block; margin-bottom:26px;">By The Numbers</span>
+    <div class="stats-grid">
+      <div class="stat-card"><span class="stat-num">8+</span><span class="stat-label">Years in brand &amp; marketing comms</span></div>
+      <div class="stat-card"><span class="stat-num">1M+</span><span class="stat-label">Ambassador program impressions</span></div>
+      <div class="stat-card"><span class="stat-num">45K</span><span class="stat-label">Newsletter subscribers</span></div>
+      <div class="stat-card"><span class="stat-num">40%</span><span class="stat-label">YoY social reach growth</span></div>
+      <div class="stat-card"><span class="stat-num">+45%</span><span class="stat-label">Brand awareness lift, key markets</span></div>
+      <div class="stat-card"><span class="stat-num">$150K</span><span class="stat-label">Brand budget managed</span></div>
+      <div class="stat-card"><span class="stat-num">~50K</span><span class="stat-label">Personal audience, Bookstagram</span></div>
+      <div class="stat-card"><span class="stat-num">3.3M+</span><span class="stat-label">Content views, Bookstagram</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARCHIVE / TIMELINE ============ -->
+<section class="bg-tint reveal" id="archive">
+  <div class="wrap">
+    <span class="eyebrow section-kicker">Career Timeline</span>
+    <h2 class="section-title" style="margin-bottom:20px;">The Archive</h2>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-date">Dec 2024 — Aug 2026</div>
+        <div class="tl-role">
+          <span class="tl-org">Pluralsight</span>
+          <h4>Employer Brand Program Manager</h4>
+          <p>Owned the global EVP and messaging framework across recruiting, social, executive comms, and careers content.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">Jul 2021 — Dec 2024</div>
+        <div class="tl-role">
+          <span class="tl-org">Pluralsight</span>
+          <h4>Sr. Employer Brand Specialist</h4>
+          <p>Built the ambassador program and content strategy, and led the careers site transformation.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">Jan 2021 — 2025</div>
+        <div class="tl-role">
+          <span class="tl-org">Self-Employed</span>
+          <h4>Content Creator &amp; Book Reviewer</h4>
+          <p>Grew an audience of nearly 50,000 followers; partnered with publishers, authors, and brands on campaigns and launches.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">Nov 2020 — Jul 2021</div>
+        <div class="tl-role">
+          <span class="tl-org">2U, Inc.</span>
+          <h4>Junior Brand Strategist</h4>
+          <p>Drove portfolio-wide brand strategy through funnel analytics, personas, and competitive benchmarking.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">Mar 2019 — Nov 2020</div>
+        <div class="tl-role">
+          <span class="tl-org">2U, Inc.</span>
+          <h4>Brand Marketing Coordinator</h4>
+          <p>Led marketing coordination for graduate programs with Harvard, Yale, and Baylor.</p>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">Jun 2018 — Apr 2019</div>
+        <div class="tl-role">
+          <span class="tl-org">Comcast Spotlight</span>
+          <h4>Shared Services Coordinator</h4>
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-date">Jan 2018 — May 2018</div>
+        <div class="tl-role">
+          <span class="tl-org">Penn State University</span>
+          <h4>Management &amp; Marketing Intern</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="edu-cert-grid">
+      <div>
+        <h4>Education</h4>
+        <ul>
+          <li>B.S., Marketing/Marketing Management — Penn State University (2018)</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Certifications</h4>
+        <ul>
+          <li>Search Engine Optimization (SEO) — HubSpot, 2024</li>
+          <li>Inclusive Employer Brand — Textio, 2023</li>
+          <li>Employer Brand Strategist — P.H. CreativeSkills, 2021</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER / CONTACT ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-head">
+      <span class="eyebrow" style="color:#D89A80;">Next Issue</span>
+      <h2>Let's write<br>the next chapter.</h2>
+      <p>I don't just enjoy writing communications — I enjoy uncovering the story worth telling. I'd love the opportunity to help tell yours.</p>
+      <div class="footer-cta-row">
+        <a href="mailto:jessicaleitner2@gmail.com" class="btn btn-solid">Email Me</a>
+        <a href="tel:4124170143" class="btn btn-outline">Call Me</a>
+        <a href="Jess-Leitner-Resume.pdf" target="_blank" class="btn btn-outline">Download Résumé</a>
+      </div>
+    </div>
+    <div class="footer-contact">
+      <div class="footer-contact-list">
+        <span>☎ 412-417-0143</span>
+        <span>✉ jessicaleitner2@gmail.com</span>
+        <span>📍 Pittsburgh, PA</span>
+        <a href="https://www.linkedin.com/in/jessleitner/" target="_blank" rel="noopener" style="text-decoration:none;">in LinkedIn</a>
+      </div>
+      <div class="footer-sig">Jess Leitner</div>
+    </div>
+    <p class="footer-fine">The Leitner Report — Brand &amp; Marketing Communications Portfolio</p>
+  </div>
+</footer>
+
+<script>
+  // Video carousel (Feed section)
+  (function(){
+    const wrap = document.getElementById('feedCarousel');
+    if(!wrap) return;
+    const videos = Array.from(wrap.querySelectorAll('video'));
+    const dots = Array.from(wrap.querySelectorAll('.carousel-dot'));
+    let idx = 0;
+    function show(i){
+      videos.forEach((v, vi) => {
+        if(vi === i){ v.classList.add('active'); } else { v.classList.remove('active'); v.pause(); }
+      });
+      dots.forEach((d, di) => d.classList.toggle('active', di === i));
+      idx = i;
+    }
+    window.feedCarouselGo = function(i){ show(i); };
+    window.feedCarouselMove = function(delta){ show((idx + delta + videos.length) % videos.length); };
+  })();
+
+  // Scroll-reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12});
+  revealEls.forEach(el=>io.observe(el));
+
+  // Sticky topbar section label
+  const sections = document.querySelectorAll('[id^="feature-"], #testimonials, #archive, #toc, #home, #about');
+  const label = document.getElementById('topbar-section');
+  const so = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        const name = entry.target.id === 'home' ? '' :
+          entry.target.id === 'about' ? 'About' :
+          entry.target.id === 'toc' ? 'Table of Contents' :
+          entry.target.id === 'testimonials' ? 'Testimonials' :
+          entry.target.id === 'archive' ? 'Career Timeline' :
+          (document.querySelector('[href="#'+entry.target.id+'"]')?.dataset.section || '');
+        if(name){ label.textContent = name; label.classList.add('show'); }
+        else { label.classList.remove('show'); }
+      }
+    });
+  },{rootMargin:'-45% 0px -45% 0px'});
+  sections.forEach(s=>so.observe(s));
+</script>
+
+</body>
+</html>
