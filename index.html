@@ -100,7 +100,7 @@
       radial-gradient(circle at 88% -10%, rgba(168,90,56,0.22), transparent 45%),
       linear-gradient(180deg, var(--deep) 0%, #35452F 100%);
     color:var(--white);
-    padding:64px 0 76px;
+    padding:44px 0 56px;
     position:relative;
     overflow:hidden;
   }
@@ -155,7 +155,7 @@
   .hero-meta span{white-space:nowrap;}
 
   /* ===== Section shells ===== */
-  section{padding:88px 0;}
+  section{padding:56px 0;}
   .section-title-row{display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:44px; flex-wrap:wrap;}
   .section-kicker{color:var(--moss); margin-bottom:10px; display:block;}
   .section-title{font-size:clamp(31.5px, 3.6vw, 47px);}
@@ -191,6 +191,22 @@
   .toc-nav-item:hover .toc-nav-num{color:#D89A80;}
   @media(max-width:760px){ .toc-nav-item{flex:1 1 45%;} }
 
+  /* ===== Social tabs (filter nav) ===== */
+  .social-tabs{display:flex; flex-wrap:wrap; border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:8px;}
+  .social-tab{
+    flex:1 1 auto; padding:14px 14px; background:transparent; border:none; cursor:pointer;
+    font-family:var(--font-sub); font-size:14px; font-weight:600; text-align:center; color:var(--black);
+    border-right:1px solid var(--line); border-bottom:3px solid transparent;
+    transition:background .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .social-tab span{display:block; font-size:11.5px; font-weight:500; text-transform:uppercase; letter-spacing:.04em; color:rgba(0,0,0,0.5); margin-top:3px;}
+  .social-tab:hover{background:rgba(0,0,0,0.04);}
+  .social-tab.active{border-bottom-color:var(--accent); color:var(--moss);}
+  .social-tab.active span{color:var(--accent);}
+  @media(max-width:760px){ .social-tab{flex:1 1 45%;} }
+  .social-panel{display:none;}
+  .social-panel.active{display:block;}
+
   /* ===== TOC (old vertical list, unused) ===== */
   .toc-list{list-style:none; margin:0; padding:0; border-top:1px solid var(--line);}
   .toc-item{
@@ -219,7 +235,7 @@
   /* ===== Feature spreads ===== */
   .feature{padding:0; border-bottom:1px solid var(--line);}
   .feature-inner{
-    max-width:var(--maxw); margin:0 auto; padding:80px 32px;
+    max-width:var(--maxw); margin:0 auto; padding:52px 32px;
     display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
   }
   .feature.reverse .feature-inner{direction:rtl;}
@@ -231,7 +247,7 @@
   }
   .feature h3{font-size:clamp(27px, 3vw, 38px); margin-bottom:18px; font-family:var(--font-display); font-weight:600;}
   .feature p{color:rgba(0,0,0,0.75); font-size:18px; margin:0 0 14px;}
-  .feature-stats{display:flex; gap:24px; margin:26px 0 26px; flex-wrap:wrap;}
+  .feature-stats{display:flex; gap:24px; margin:18px 0 18px; flex-wrap:wrap;}
   .feature-stat b{font-family:var(--font-display); font-size:29px; display:block; color:var(--moss);}
   .feature-stat span{font-family:var(--font-sub); font-size:12.5px; text-transform:uppercase; letter-spacing:.04em; color:rgba(0,0,0,0.55);}
   .feature-links{margin-top:22px; display:flex; gap:12px; flex-wrap:wrap;}
@@ -355,7 +371,7 @@
   .edu-cert-grid li{padding:10px 0; border-bottom:1px solid var(--line); font-size:16px;}
 
   /* ===== Footer / contact ===== */
-  .footer{background:var(--deep); color:var(--white); padding:80px 0 40px;}
+  .footer{background:var(--deep); color:var(--white); padding:56px 0 32px;}
   .footer-head{text-align:center; max-width:640px; margin:0 auto;}
   .footer h2{font-size:clamp(33.5px, 4.4vw, 58px); margin-bottom:18px;}
   .footer-head p{color:rgba(255,255,255,0.8); font-size:18px; font-family:var(--font-body);}
@@ -369,7 +385,7 @@
   .footer-fine{margin-top:40px; text-align:center; font-family:var(--font-sub); font-size:12.5px; color:rgba(255,255,255,0.4); letter-spacing:.04em;}
 
   @media(max-width:860px){
-    .feature-inner{grid-template-columns:1fr; padding:56px 24px;}
+    .feature-inner{grid-template-columns:1fr; padding:40px 24px;}
     .feature.reverse .feature-inner{direction:ltr;}
     .quote-wall{columns:1 260px;}
     .tl-row{grid-template-columns:1fr; gap:6px;}
@@ -432,7 +448,7 @@
 </section>
 
 <!-- ============ TABLE OF CONTENTS ============ -->
-<section class="bg-tint" id="toc" style="padding:56px 0;">
+<section class="bg-tint" id="toc" style="padding:40px 0;">
   <div class="wrap">
     <div class="section-title-row" style="margin-bottom:24px;">
       <div>
@@ -442,12 +458,13 @@
     </div>
     <nav class="toc-nav">
       <a class="toc-nav-item" href="#feature-01" data-section="Brand Positioning &amp; Strategy"><span class="toc-nav-num">01</span>Positioning &amp; Strategy</a>
-      <a class="toc-nav-item" href="#feature-02" data-section="Employee Advocacy Program"><span class="toc-nav-num">02</span>The Ambassador Effect</a>
-      <a class="toc-nav-item" href="#feature-03" data-section="Social Media, All Channels"><span class="toc-nav-num">03</span>Social Media</a>
-      <a class="toc-nav-item" href="#feature-04" data-section="Long-Form Video &amp; Podcast Production"><span class="toc-nav-num">04</span>On Camera</a>
-      <a class="toc-nav-item" href="#feature-05" data-section="Funnel &amp; Lead Gen, All Jobs"><span class="toc-nav-num">05</span>Funnel &amp; Lead Gen</a>
-      <a class="toc-nav-item" href="#feature-06" data-section="Event Planning &amp; Brand Activations"><span class="toc-nav-num">06</span>IRL</a>
-      <a class="toc-nav-item" href="#testimonials" data-section="Testimonials" style="border-right:none;"><span class="toc-nav-num">07</span>What People Say</a>
+      <a class="toc-nav-item" href="#feature-02" data-section="Social Media, All Channels"><span class="toc-nav-num">02</span>Social Media</a>
+      <a class="toc-nav-item" href="#feature-03" data-section="Podcast Production"><span class="toc-nav-num">03</span>Podcast</a>
+      <a class="toc-nav-item" href="#feature-04" data-section="Employee Advocacy Program"><span class="toc-nav-num">04</span>The Ambassador Effect</a>
+      <a class="toc-nav-item" href="#feature-05" data-section="Long-Form Video Production"><span class="toc-nav-num">05</span>On Camera</a>
+      <a class="toc-nav-item" href="#feature-06" data-section="Funnel &amp; Lead Gen, All Jobs"><span class="toc-nav-num">06</span>Funnel &amp; Lead Gen</a>
+      <a class="toc-nav-item" href="#feature-07" data-section="Event Planning &amp; Brand Activations"><span class="toc-nav-num">07</span>IRL</a>
+      <a class="toc-nav-item" href="#testimonials" data-section="Testimonials" style="border-right:none;"><span class="toc-nav-num">08</span>What People Say</a>
     </nav>
   </div>
 </section>
@@ -504,8 +521,270 @@
   </div>
 </article>
 
-<!-- ============ 02: AMBASSADOR PROGRAM ============ -->
-<article class="feature reverse bg-tint reveal" id="feature-02">
+<!-- ============ 02: SOCIAL MEDIA (all channels, all jobs) ============ -->
+<section class="bg-tint reveal" id="feature-02">
+  <div class="wrap" style="padding:56px 32px 0;">
+    <h2 class="section-title" style="margin-bottom:16px;">Social Media</h2>
+    <p style="max-width:680px; color:rgba(0,0,0,0.72); font-size:18px; margin-bottom:20px;">Three very different audiences, three very different voices: an employer brand speaking to candidates, a founder speaking to investors and operators, and my own account speaking to readers. The job underneath is the same: know who you're talking to, and give them a reason to stick around. Pick an account below to see the work behind it.</p>
+    <div class="social-tabs" role="tablist">
+      <button class="social-tab active" type="button" data-panel="panel-ps" role="tab" aria-selected="true">Pluralsight</button>
+      <button class="social-tab" type="button" data-panel="panel-cq" role="tab" aria-selected="false">Casey Quinn</button>
+      <button class="social-tab" type="button" data-panel="panel-bg" role="tab" aria-selected="false">Personal</button>
+    </div>
+  </div>
+
+  <div class="social-panel active" id="panel-ps">
+    <div class="feature" style="border-top:1px solid var(--line); padding-top:0;">
+      <div class="feature-inner">
+        <div class="feature-copy">
+          <span class="quote-wall-label">Pluralsight — The Feed, LinkedIn</span>
+          <p>I collaborated closely with Pluralsight's social team on the brand's LinkedIn presence, owning the employer brand and culture content specifically: the posts that gave people outside the company a real look at what it's like to work there. Look for the #WeArePluralsight tag and you'll find most of it.</p>
+          <p>That partnership helped drive a 40% year-over-year increase in reach, holding a 13.5% average engagement rate along the way.</p>
+          <div class="feature-stats">
+            <div class="feature-stat"><b>40%</b><span>YoY Reach Growth</span></div>
+            <div class="feature-stat"><b>13.5%</b><span>Avg. Engagement Rate</span></div>
+          </div>
+          <div class="feature-links">
+            <a class="link-chip" href="https://www.linkedin.com/feed/hashtag/wearepluralsight/" target="_blank" rel="noopener">See #WeArePluralsight on LinkedIn ↗</a>
+          </div>
+        </div>
+        <div class="feature-media">
+          <div class="video-carousel" id="feedCarousel">
+            <div class="video-carousel-track">
+              <video class="active" src="videos/feed-reel-1.mp4" controls playsinline preload="metadata"></video>
+              <video src="videos/feed-reel-2.mp4" controls playsinline preload="metadata"></video>
+              <video src="videos/feed-reel-3.mp4" controls playsinline preload="metadata"></video>
+            </div>
+            <div class="carousel-nav">
+              <button class="carousel-btn" type="button" onclick="feedCarouselMove(-1)" aria-label="Previous video">‹</button>
+              <div class="carousel-dots">
+                <button class="carousel-dot active" type="button" onclick="feedCarouselGo(0)" aria-label="Video 1"></button>
+                <button class="carousel-dot" type="button" onclick="feedCarouselGo(1)" aria-label="Video 2"></button>
+                <button class="carousel-dot" type="button" onclick="feedCarouselGo(2)" aria-label="Video 3"></button>
+              </div>
+              <button class="carousel-btn" type="button" onclick="feedCarouselMove(1)" aria-label="Next video">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap" style="padding:0 32px 44px;">
+        <div class="clip-grid">
+          <div class="clip-card">
+            <img src="images/social-post-2.png" alt="Pluralsight LinkedIn post: Q2 Culture Champion award winners">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">in</div><strong>Culture Champions</strong></div>
+              <p>Recognition content celebrating quarterly Culture Champion award winners.</p>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7486084975260258305" target="_blank" rel="noopener">View Post ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/social-post-3.png" alt="Pluralsight LinkedIn post: A day in the life of a Pluralsighter, Dublin edition">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">in</div><strong>Day in the Life</strong></div>
+              <p>A day-in-the-life series giving candidates a real look at working life at Pluralsight, Dublin edition.</p>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7472345759703777280" target="_blank" rel="noopener">View Post ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/social-post-4.png" alt="Pluralsight LinkedIn post: RKO 2026 company kickoff recap">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">in</div><strong>Company Kickoff</strong></div>
+              <p>Recap content from Pluralsight's 2026 company kickoff (RKO).</p>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7421613013033717760" target="_blank" rel="noopener">View Post ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/dip-off.png" alt="Pluralsight LinkedIn post: the first-ever Dip Off at HQ">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">in</div><strong>The Dip Off</strong></div>
+              <p>I planned this one, a small culture-building event at HQ that turned into one of the year's top-performing social posts.</p>
+              <a href="https://www.linkedin.com/feed/update/urn:li:activity:7465783990923206656" target="_blank" rel="noopener">View Post ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-panel" id="panel-cq">
+    <div class="feature reverse" style="border-top:1px solid var(--line); padding-top:0;">
+      <div class="feature-inner">
+        <div class="feature-copy">
+          <span class="quote-wall-label">SteelPoint — Casey Quinn</span>
+          <p>Casey already had a small audience and a podcast running when I joined, just no strategy behind either. I built the brand positioning and content pillars, then took over running his presence day to day across Instagram, LinkedIn, TikTok, and YouTube.</p>
+          <p>In the first three months, that work drove 2.9M+ video views and 49.6K engagements, growing his net audience 446%.</p>
+          <div class="feature-stats">
+            <div class="feature-stat"><b>2.9M+</b><span>Video Views</span></div>
+            <div class="feature-stat"><b>49.6K</b><span>Engagements</span></div>
+            <div class="feature-stat"><b>446%</b><span>Net Audience Growth</span></div>
+          </div>
+          <div class="feature-links">
+            <a class="link-chip" href="https://www.instagram.com/caseyryanquinn/" target="_blank" rel="noopener">Visit @caseyryanquinn ↗</a>
+            <a class="link-chip" href="https://caseyryanquinn.com/" target="_blank" rel="noopener">View caseyryanquinn.com ↗</a>
+          </div>
+        </div>
+        <div class="feature-media">
+          <div class="screenshot-card" style="max-width:280px; margin:0 auto;">
+            <img src="images/steelpoint-reel-steelers.jpg" alt="Casey Quinn Instagram reel, Steelers trivia hook, 792K views">
+          </div>
+        </div>
+      </div>
+      <div class="wrap" style="padding:0 32px 10px;">
+        <span class="quote-wall-label">By platform</span>
+        <div class="feature-stats" style="margin-bottom:20px;">
+          <div class="feature-stat"><b>+537%</b><span>Instagram Views</span></div>
+          <div class="feature-stat"><b>+84.5%</b><span>LinkedIn Followers</span></div>
+          <div class="feature-stat"><b>949K+</b><span>TikTok Views</span></div>
+          <div class="feature-stat"><b>+798%</b><span>YouTube Views</span></div>
+        </div>
+      </div>
+      <div class="wrap" style="padding:0 32px 44px;">
+        <span class="quote-wall-label">A few examples</span>
+        <div class="clip-grid">
+          <div class="clip-card">
+            <img src="images/steelpoint-reel-ea-vs-aa.jpg" alt="Casey Quinn Instagram reel: Executive Assistant vs Administrative Assistant, 211.5K views">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">IG</div><strong>EA vs. Admin Assistant</strong></div>
+              <p>A quick-hit business explainer reel that pulled 211.5K views and sparked a real comment debate.</p>
+              <a href="https://www.instagram.com/caseyryanquinn/" target="_blank" rel="noopener">Visit @caseyryanquinn ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/steelpoint-li-duquesne.jpg" alt="Casey Quinn LinkedIn post: Duquesne Athletics announces five-year jersey and helmet partnership with SteelPoint Capital">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">in</div><strong>Duquesne Partnership</strong></div>
+              <p>Announced a five-year partnership putting the SteelPoint logo on Duquesne football jerseys and helmets, a full-circle moment since Casey played there.</p>
+              <a href="https://caseyryanquinn.com/" target="_blank" rel="noopener">View caseyryanquinn.com ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/steelpoint-li-golf-team.jpg" alt="Casey Quinn LinkedIn post: Good to get away from the office, SteelPoint team golf outing photo">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">in</div><strong>Team Day Out</strong></div>
+              <p>"Good to get away from the office" — a team photo from the Pat Quinn memorial golf outing, the kind of culture post that humanizes the brand.</p>
+              <a href="https://caseyryanquinn.com/" target="_blank" rel="noopener">View caseyryanquinn.com ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="social-panel" id="panel-bg">
+    <div class="feature" style="border-top:1px solid var(--line); padding-top:0;">
+      <div class="feature-inner">
+        <div class="feature-copy">
+          <span class="quote-wall-label">My Own Audience — Bookstagram</span>
+          <p>Outside the day job, I built @readreviewsbyjess into an audience of nearly 50,000 from nothing. No team, no budget, just organic strategy: reading platform trends, listening to what the community actually wanted, and showing up consistently. I owned every part of it myself, from concept and copywriting to filming, editing, publishing, and reading the analytics to figure out what to do next.</p>
+          <p>Publishers, bestselling authors, and consumer brands have trusted that audience enough to run launches and sponsored campaigns through it.</p>
+          <div class="feature-stats">
+            <div class="feature-stat"><b>~50K</b><span>Engaged Followers</span></div>
+            <div class="feature-stat"><b>383</b><span>Pieces of Content</span></div>
+            <div class="feature-stat"><b>3.3M+</b><span>Views · 900K+ Likes</span></div>
+          </div>
+          <div class="feature-links">
+            <a class="link-chip" href="https://www.instagram.com/readreviewsbyjess/" target="_blank" rel="noopener">Visit @readreviewsbyjess ↗</a>
+          </div>
+        </div>
+        <div class="feature-media">
+          <div class="screenshot-card">
+            <img src="images/bookstagram-profile.png" alt="@readreviewsbyjess Instagram profile, blogger with nearly 50,000 followers">
+          </div>
+        </div>
+      </div>
+      <div class="wrap" style="padding:0 32px 44px;">
+        <div class="clip-grid">
+          <div class="clip-card">
+            <img src="images/bookstagram-1.png" alt="Instagram carousel: Your guide to using your Kindle like a pro">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">IG</div><strong>Reader Guide</strong></div>
+              <p>A "using your Kindle like a pro" guide: evergreen, saveable content built for shares.</p>
+              <a href="https://www.instagram.com/p/CouYj1zL3cd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Post ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/bookstagram-2.png" alt="Instagram carousel: Your guide to reading more">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">IG</div><strong>Reader Guide</strong></div>
+              <p>A "guide to reading more" carousel pairing tips with a curated stack of romance picks.</p>
+              <a href="https://www.instagram.com/p/CsrEzNwLPAL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Post ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/bookstagram-3.png" alt="Instagram reel featuring the book Verity by Colleen Hoover">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">IG</div><strong>Book Review Reel</strong></div>
+              <p>A hook-driven review reel for Colleen Hoover's "Verity," built for scroll-stopping shares.</p>
+              <a href="https://www.instagram.com/reel/CgSUkJbANPu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Reel ↗</a>
+            </div>
+          </div>
+          <div class="clip-card">
+            <img src="images/bookstagram-4.png" alt="Instagram reel: midday reading break">
+            <div class="clip-body">
+              <div class="clip-top"><div class="clip-badge">IG</div><strong>Behind the Scenes</strong></div>
+              <p>A "midday reading break" reel: the personal, day-in-the-life content that builds trust with an audience.</p>
+              <a href="https://www.instagram.com/reel/C0CHYaQLsso/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Reel ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03: PODCAST ============ -->
+<section class="bg-deep reveal" id="feature-03">
+  <div class="wrap" style="padding:56px 32px;">
+    <h3 style="font-size:clamp(27px, 3vw, 38px); margin-bottom:16px; color:var(--white); font-family:var(--font-display); font-weight:600;">Podcast</h3>
+    <p style="max-width:640px; color:rgba(255,255,255,0.8); font-size:18px; margin-bottom:20px; font-family:var(--font-body);">Casey had a podcast running when I joined; it just didn't have a strategy. I gave it one: a format, a guest pipeline, and a production rhythm. Now I produce <em>Never Perfect</em> twice a week end to end, handling format, guest conversations, and everything that gets an episode in front of an audience, while prepping two more long-form shows under the same brand.</p>
+    <div class="feature-stats" style="margin:8px 0 36px;">
+      <div class="feature-stat"><b>2×/wk</b><span style="color:rgba(255,255,255,0.65);">Episode Cadence</span></div>
+      <div class="feature-stat"><b>0→1</b><span style="color:rgba(255,255,255,0.65);">Guest Pipeline Built in GHL</span></div>
+      <div class="feature-stat"><b>3</b><span style="color:rgba(255,255,255,0.65);">Shows Under the Brand</span></div>
+    </div>
+    <div class="video-grid">
+      <a class="video-card" href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener">
+        <div class="video-thumb"><img src="images/steelpoint-podcast-cashprofit.jpg" alt="Never Perfect podcast episode: Cash greater than Profit, with CFO Kevin Rombach"><span class="play-badge">▶</span></div>
+        <div class="video-card-body">
+          <h4>Cash &gt; Profit</h4>
+          <p>A flagship episode with SteelPoint's CFO on what actually matters when scaling a business.</p>
+          <span class="watch-link">Watch on YouTube ↗</span>
+        </div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener">
+        <div class="video-thumb"><img src="images/steelpoint-podcast-golfers.jpg" alt="Never Perfect podcast episode: 144 Golfers. Zero Complaints."><span class="play-badge">▶</span></div>
+        <div class="video-card-body">
+          <h4>144 Golfers. Zero Complaints.</h4>
+          <p>The recap episode on pulling off the Pat Quinn memorial golf outing.</p>
+          <span class="watch-link">Watch on YouTube ↗</span>
+        </div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener">
+        <div class="video-thumb"><img src="images/steelpoint-podcast-choosehard.jpg" alt="Never Perfect podcast episode thumbnail, Choose Hard"><span class="play-badge">▶</span></div>
+        <div class="video-card-body">
+          <h4>Choose Hard</h4>
+          <p>A conversation on why the harder path is usually the right one when you're building something.</p>
+          <span class="watch-link">Watch on YouTube ↗</span>
+        </div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener">
+        <div class="video-thumb"><img src="images/steelpoint-podcast-samezip.jpg" alt="Never Perfect podcast episode thumbnail"><span class="play-badge">▶</span></div>
+        <div class="video-card-body">
+          <h4>Hump Day Huddle</h4>
+          <p>The shorter midweek format that keeps the show's cadence moving between flagship episodes.</p>
+          <span class="watch-link">Watch on YouTube ↗</span>
+        </div>
+      </a>
+    </div>
+    <div class="feature-links" style="margin-top:36px;">
+      <a class="link-chip" href="https://neverperfectpodcast.com/" target="_blank" rel="noopener" style="border-color:rgba(255,255,255,0.6); color:#fff;">Visit neverperfectpodcast.com ↗</a>
+      <a class="link-chip" href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener" style="border-color:rgba(255,255,255,0.6); color:#fff;">Watch Never Perfect ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04: AMBASSADOR PROGRAM ============ -->
+<article class="feature reverse bg-tint reveal" id="feature-04">
   <div class="feature-inner">
     <div class="feature-copy">
       <h3>The Ambassador Effect</h3>
@@ -531,210 +810,11 @@
   </div>
 </article>
 
-<!-- ============ 03: SOCIAL MEDIA (all channels, all jobs) ============ -->
-<section class="bg-tint reveal" id="feature-03">
-  <div class="wrap" style="padding:88px 32px 0;">
-    <h2 class="section-title" style="margin-bottom:16px;">Social Media</h2>
-    <p style="max-width:680px; color:rgba(0,0,0,0.72); font-size:18px; margin-bottom:8px;">Three very different audiences, three very different voices: an employer brand speaking to candidates, a founder speaking to investors and operators, and my own account speaking to readers. The job underneath is the same: know who you're talking to, and give them a reason to stick around.</p>
-  </div>
-
-  <div class="feature" style="border-top:1px solid var(--line);">
-    <div class="feature-inner">
-      <div class="feature-copy">
-        <span class="quote-wall-label">Pluralsight — The Feed</span>
-        <p>I collaborated closely with Pluralsight's social team on the brand's LinkedIn presence, owning the employer brand and culture content specifically: the posts that gave people outside the company a real look at what it's like to work there. Look for the #WeArePluralsight tag and you'll find most of it.</p>
-        <p>That partnership helped drive a 40% year-over-year increase in reach, holding a 13.5% average engagement rate along the way.</p>
-        <div class="feature-stats">
-          <div class="feature-stat"><b>40%</b><span>YoY Reach Growth</span></div>
-          <div class="feature-stat"><b>13.5%</b><span>Avg. Engagement Rate</span></div>
-        </div>
-        <div class="feature-links">
-          <a class="link-chip" href="https://www.linkedin.com/feed/hashtag/wearepluralsight/" target="_blank" rel="noopener">See #WeArePluralsight on LinkedIn ↗</a>
-        </div>
-      </div>
-      <div class="feature-media">
-        <div class="video-carousel" id="feedCarousel">
-          <div class="video-carousel-track">
-            <video class="active" src="videos/feed-reel-1.mp4" controls playsinline preload="metadata"></video>
-            <video src="videos/feed-reel-2.mp4" controls playsinline preload="metadata"></video>
-            <video src="videos/feed-reel-3.mp4" controls playsinline preload="metadata"></video>
-          </div>
-          <div class="carousel-nav">
-            <button class="carousel-btn" type="button" onclick="feedCarouselMove(-1)" aria-label="Previous video">‹</button>
-            <div class="carousel-dots">
-              <button class="carousel-dot active" type="button" onclick="feedCarouselGo(0)" aria-label="Video 1"></button>
-              <button class="carousel-dot" type="button" onclick="feedCarouselGo(1)" aria-label="Video 2"></button>
-              <button class="carousel-dot" type="button" onclick="feedCarouselGo(2)" aria-label="Video 3"></button>
-            </div>
-            <button class="carousel-btn" type="button" onclick="feedCarouselMove(1)" aria-label="Next video">›</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="wrap" style="padding:0 32px 72px;">
-      <div class="clip-grid">
-        <div class="clip-card">
-          <img src="images/social-post-2.png" alt="Pluralsight LinkedIn post: Q2 Culture Champion award winners">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">in</div><strong>Culture Champions</strong></div>
-            <p>Recognition content celebrating quarterly Culture Champion award winners.</p>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7486084975260258305" target="_blank" rel="noopener">View Post ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/social-post-3.png" alt="Pluralsight LinkedIn post: A day in the life of a Pluralsighter, Dublin edition">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">in</div><strong>Day in the Life</strong></div>
-            <p>A day-in-the-life series giving candidates a real look at working life at Pluralsight, Dublin edition.</p>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7472345759703777280" target="_blank" rel="noopener">View Post ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/social-post-4.png" alt="Pluralsight LinkedIn post: RKO 2026 company kickoff recap">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">in</div><strong>Company Kickoff</strong></div>
-            <p>Recap content from Pluralsight's 2026 company kickoff (RKO).</p>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7421613013033717760" target="_blank" rel="noopener">View Post ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/dip-off.png" alt="Pluralsight LinkedIn post: the first-ever Dip Off at HQ">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">in</div><strong>The Dip Off</strong></div>
-            <p>I planned this one, a small culture-building event at HQ that turned into one of the year's top-performing social posts.</p>
-            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7465783990923206656" target="_blank" rel="noopener">View Post ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="feature reverse" style="border-top:1px solid var(--line);">
-    <div class="feature-inner">
-      <div class="feature-copy">
-        <span class="quote-wall-label">SteelPoint — Casey Quinn</span>
-        <p>Casey already had a small audience and a podcast running when I joined, just no strategy behind either. I built the brand positioning and content pillars, then took over running his social presence day to day: Instagram, LinkedIn, TikTok, and the YouTube channel where Never Perfect lives.</p>
-        <p>In the first three months, that work drove 2.9M+ video views and 49.6K engagements, growing his net audience 446%.</p>
-        <div class="feature-stats">
-          <div class="feature-stat"><b>2.9M+</b><span>Video Views</span></div>
-          <div class="feature-stat"><b>49.6K</b><span>Engagements</span></div>
-          <div class="feature-stat"><b>446%</b><span>Net Audience Growth</span></div>
-        </div>
-        <div class="feature-links">
-          <a class="link-chip" href="https://www.instagram.com/caseyryanquinn/" target="_blank" rel="noopener">Visit @caseyryanquinn ↗</a>
-          <a class="link-chip" href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener">Watch on YouTube ↗</a>
-        </div>
-      </div>
-      <div class="feature-media">
-        <div class="screenshot-card" style="max-width:280px; margin:0 auto;">
-          <img src="images/steelpoint-reel-steelers.jpg" alt="Casey Quinn Instagram reel, Steelers trivia hook, 792K views">
-        </div>
-      </div>
-    </div>
-    <div class="wrap" style="padding:0 32px 72px;">
-      <span class="quote-wall-label">A few examples</span>
-      <div class="clip-grid">
-        <div class="clip-card">
-          <img src="images/steelpoint-reel-ea-vs-aa.jpg" alt="Casey Quinn Instagram reel: Executive Assistant vs Administrative Assistant, 211.5K views">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">IG</div><strong>EA vs. Admin Assistant</strong></div>
-            <p>A quick-hit business explainer reel that pulled 211.5K views and sparked a real comment debate.</p>
-            <a href="https://www.instagram.com/caseyryanquinn/" target="_blank" rel="noopener">Visit @caseyryanquinn ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/steelpoint-li-duquesne.jpg" alt="Casey Quinn LinkedIn post: Duquesne Athletics announces five-year jersey and helmet partnership with SteelPoint Capital">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">in</div><strong>Duquesne Partnership</strong></div>
-            <p>Announced a five-year partnership putting the SteelPoint logo on Duquesne football jerseys and helmets, a full-circle moment since Casey played there.</p>
-            <a href="https://caseyryanquinn.com/" target="_blank" rel="noopener">View caseyryanquinn.com ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/steelpoint-podcast-cashprofit.jpg" alt="Never Perfect podcast episode: Cash > Profit, with CFO Kevin Rombach">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">▶</div><strong>Never Perfect</strong></div>
-            <p>"Cash &gt; Profit," a flagship episode with SteelPoint's CFO on what actually matters when scaling a business.</p>
-            <a href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener">Watch on YouTube ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/steelpoint-podcast-golfers.jpg" alt="Never Perfect podcast episode: 144 Golfers. Zero Complaints.">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">▶</div><strong>Never Perfect</strong></div>
-            <p>"144 Golfers. Zero Complaints.," the recap episode on pulling off the Pat Quinn memorial golf outing.</p>
-            <a href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener">Watch on YouTube ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="feature" style="border-top:1px solid var(--line);">
-    <div class="feature-inner">
-      <div class="feature-copy">
-        <span class="quote-wall-label">My Own Audience — Bookstagram</span>
-        <p>Outside the day job, I built @readreviewsbyjess into an audience of nearly 50,000 from nothing. No team, no budget, just organic strategy: reading platform trends, listening to what the community actually wanted, and showing up consistently. I owned every part of it myself, from concept and copywriting to filming, editing, publishing, and reading the analytics to figure out what to do next.</p>
-        <p>Publishers, bestselling authors, and consumer brands have trusted that audience enough to run launches and sponsored campaigns through it.</p>
-        <div class="feature-stats">
-          <div class="feature-stat"><b>~50K</b><span>Engaged Followers</span></div>
-          <div class="feature-stat"><b>383</b><span>Pieces of Content</span></div>
-          <div class="feature-stat"><b>3.3M+</b><span>Views · 900K+ Likes</span></div>
-        </div>
-        <div class="feature-links">
-          <a class="link-chip" href="https://www.instagram.com/readreviewsbyjess/" target="_blank" rel="noopener">Visit @readreviewsbyjess ↗</a>
-        </div>
-      </div>
-      <div class="feature-media">
-        <div class="screenshot-card">
-          <img src="images/bookstagram-profile.png" alt="@readreviewsbyjess Instagram profile, blogger with nearly 50,000 followers">
-        </div>
-      </div>
-    </div>
-    <div class="wrap" style="padding:0 32px 80px;">
-      <div class="clip-grid">
-        <div class="clip-card">
-          <img src="images/bookstagram-1.png" alt="Instagram carousel: Your guide to using your Kindle like a pro">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">IG</div><strong>Reader Guide</strong></div>
-            <p>A "using your Kindle like a pro" guide: evergreen, saveable content built for shares.</p>
-            <a href="https://www.instagram.com/p/CouYj1zL3cd/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Post ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/bookstagram-2.png" alt="Instagram carousel: Your guide to reading more">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">IG</div><strong>Reader Guide</strong></div>
-            <p>A "guide to reading more" carousel pairing tips with a curated stack of romance picks.</p>
-            <a href="https://www.instagram.com/p/CsrEzNwLPAL/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Post ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/bookstagram-3.png" alt="Instagram reel featuring the book Verity by Colleen Hoover">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">IG</div><strong>Book Review Reel</strong></div>
-            <p>A hook-driven review reel for Colleen Hoover's "Verity," built for scroll-stopping shares.</p>
-            <a href="https://www.instagram.com/reel/CgSUkJbANPu/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Reel ↗</a>
-          </div>
-        </div>
-        <div class="clip-card">
-          <img src="images/bookstagram-4.png" alt="Instagram reel: midday reading break">
-          <div class="clip-body">
-            <div class="clip-top"><div class="clip-badge">IG</div><strong>Behind the Scenes</strong></div>
-            <p>A "midday reading break" reel: the personal, day-in-the-life content that builds trust with an audience.</p>
-            <a href="https://www.instagram.com/reel/C0CHYaQLsso/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank" rel="noopener">View Reel ↗</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 04: ON CAMERA ============ -->
-<section class="bg-deep reveal" id="feature-04">
-  <div class="wrap" style="padding:88px 32px;">
+<!-- ============ 05: ON CAMERA ============ -->
+<section class="bg-deep reveal" id="feature-05">
+  <div class="wrap" style="padding:56px 32px;">
     <h3 style="font-size:clamp(27px, 3vw, 38px); margin-bottom:16px; color:var(--white); font-family:var(--font-display); font-weight:600;">On Camera</h3>
-    <p style="max-width:640px; color:rgba(255,255,255,0.8); font-size:18px; margin-bottom:44px; font-family:var(--font-body);">I sat down with the people whose stories actually mattered, asked the questions that got past the talking points, and shaped hours of footage into something worth watching. Candidates have told me, unprompted, that these were the videos that convinced them to apply.</p>
+    <p style="max-width:640px; color:rgba(255,255,255,0.8); font-size:18px; margin-bottom:28px; font-family:var(--font-body);">I sat down with the people whose stories actually mattered, asked the questions that got past the talking points, and shaped hours of footage into something worth watching. Candidates have told me, unprompted, that these were the videos that convinced them to apply.</p>
     <div class="video-grid">
       <a class="video-card" href="https://www.youtube.com/watch?v=sHDXGwmwc5Y" target="_blank" rel="noopener">
         <div class="video-thumb">
@@ -770,16 +850,13 @@
         </div>
       </a>
     </div>
-    <p style="max-width:640px; color:rgba(255,255,255,0.8); font-size:16.5px; margin-top:40px;">That same on-camera instinct now runs the other way, too: I produce <em>Never Perfect</em>, a twice-weekly podcast, handling the format, the guest conversations, and everything that gets it in front of an audience.</p>
-    <div class="feature-links" style="margin-top:18px;">
-      <a class="link-chip" href="https://www.youtube.com/channel/UCvdgaSC_wt_ROvNMGhHhqUQ" target="_blank" rel="noopener" style="border-color:rgba(255,255,255,0.6); color:#fff;">Watch Never Perfect ↗</a>
-    </div>
   </div>
 </section>
 
-<!-- ============ 05: FUNNEL & LEAD GEN (all jobs) ============ -->
-<section class="bg-white reveal" id="feature-05">
-  <div class="wrap" style="padding:88px 32px 0;">
+
+<!-- ============ 06: FUNNEL & LEAD GEN (all jobs) ============ -->
+<section class="bg-white reveal" id="feature-06">
+  <div class="wrap" style="padding:56px 32px 0;">
     <h2 class="section-title" style="margin-bottom:16px;">Funnel &amp; Lead Gen</h2>
     <p style="max-width:680px; color:rgba(0,0,0,0.72); font-size:18px; margin-bottom:8px;">Content only matters if it moves someone from curious to committed. Across every job, I've built the engines that do that: the newsletter that keeps pulling readers back, the site that turns a visit into an application, the pipeline that turns a cold outreach into a booked podcast guest.</p>
   </div>
@@ -832,9 +909,9 @@
   </div>
 </section>
 
-<!-- ============ 06: IRL EVENTS (all jobs) ============ -->
-<section class="bg-tint reveal" id="feature-06">
-  <div class="wrap" style="padding:88px 32px;">
+<!-- ============ 07: IRL EVENTS (all jobs) ============ -->
+<section class="bg-tint reveal" id="feature-07">
+  <div class="wrap" style="padding:56px 32px;">
     <h2 class="section-title" style="margin-bottom:16px;">IRL</h2>
     <p style="max-width:640px; color:rgba(0,0,0,0.72); font-size:18px; margin-bottom:36px;">I planned and ran everything from small remote culture moments to a full external recruiting event, handling messaging, signage, catering, and run of show myself, start to finish. The strategy matters, but so does whether the coffee showed up on time.</p>
     <div class="clip-grid">
@@ -929,7 +1006,7 @@
 </section>
 
 <!-- ============ BY THE NUMBERS ============ -->
-<section class="bg-deep" style="padding:64px 0;">
+<section class="bg-deep" style="padding:44px 0;">
   <div class="wrap">
     <span class="eyebrow" style="color:#D89A80; display:block; margin-bottom:26px;">By The Numbers</span>
     <div class="stats-grid">
@@ -1077,6 +1154,19 @@
     }
     window.feedCarouselGo = function(i){ show(i); };
     window.feedCarouselMove = function(delta){ show((idx + delta + videos.length) % videos.length); };
+  })();
+
+  // Social media tab filter
+  (function(){
+    const tabs = Array.from(document.querySelectorAll('.social-tab'));
+    const panels = Array.from(document.querySelectorAll('.social-panel'));
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.panel;
+        tabs.forEach(t => { t.classList.toggle('active', t === tab); t.setAttribute('aria-selected', t === tab ? 'true' : 'false'); });
+        panels.forEach(p => p.classList.toggle('active', p.id === target));
+      });
+    });
   })();
 
   // Scroll-reveal
